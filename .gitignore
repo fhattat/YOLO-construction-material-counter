@@ -4,6 +4,8 @@ __pycache__/
 
 # Notebooks contain Roboflow API key - do NOT publish
 *.ipynb
+# ...except the sanitized training notebook (key placeholder only)
+!pipe_counter_training.ipynb
 
 # Local artifacts
 *.log

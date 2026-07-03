@@ -25,6 +25,19 @@ pip install -r requirements.txt
 streamlit run streamlit_app.py
 ```
 
+## Train your own model
+
+The full training pipeline is in [`pipe_counter_training.ipynb`](pipe_counter_training.ipynb) —
+designed for Google Colab (T4 GPU):
+
+1. Upload the notebook to [Google Colab](https://colab.research.google.com) and select a GPU runtime
+2. Get a free API key from [Roboflow](https://roboflow.com) and replace `WRITE_YOUR_ROBOFLOW_API_KEY`
+3. Run the cells in order: setup → dataset download → training → SAHI counting test
+
+The notebook includes RAM-safe training settings for free Colab, Google Drive
+checkpointing (survives session drops via `resume=True`), and the crucial
+`max_det=1000` fix for dense-scene counting.
+
 ## Tech stack
 
 - [Ultralytics YOLO26](https://github.com/ultralytics/ultralytics) (nano) — trained on the [p15-pipe](https://universe.roboflow.com/constructionmaterial/p15-pipe) dataset (Roboflow Universe, CC BY 4.0)
