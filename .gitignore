@@ -1,0 +1,11 @@
+# Virtual environment
+.venv/
+__pycache__/
+
+# Notebooks contain Roboflow API key - do NOT publish
+*.ipynb
+
+# Local artifacts
+*.log
+sonuc.jpg
+hizli_test.jpg

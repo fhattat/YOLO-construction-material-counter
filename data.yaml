@@ -1,0 +1,36 @@
+# ============================================================
+# İnşaat Malzeme Sayımı - veri konfigürasyonu
+# ============================================================
+# Roboflow export ettiğinde kendi data.yaml'ını verir; bu dosya
+# yapıyı göstermek ve manuel kurulum içindir.
+#
+# Klasör yapısı:
+#   dataset/
+#     ├── train/images/  + train/labels/
+#     ├── valid/images/  + valid/labels/
+#     └── test/images/   + test/labels/
+#
+# Sınıf ID'leri 0,1,2 SIRASI ÖNEMLİ -> etiket dosyalarındaki
+# numara ile birebir eşleşmeli. Farklı setleri birleştirirken
+# (clone/merge) ID'lerin tutarlı olduğundan emin ol.
+# ============================================================
+
+path: /content/dataset      # Colab'da dataset kök dizini
+train: train/images
+val: valid/images
+test: test/images
+
+# ---- FAZ 1: önce SADECE boru ile başla ----
+names:
+  0: boru
+
+# ---- FAZ 3: hedef 3 sınıf (boru çalıştıktan sonra geç) ----
+# Roboflow arama keyword'leri:
+#   boru            -> "pipe counting", "HDPE pipe", "pipe stack"
+#   beton_buz       -> "concrete pipe", "RCC pipe", "culvert"
+#   cimento_torbasi -> "cement bag", "bag counter", "sack"
+#
+# names:
+#   0: boru
+#   1: beton_buz
+#   2: cimento_torbasi
