@@ -9,3 +9,7 @@ __pycache__/
 *.log
 sonuc.jpg
 hizli_test.jpg
+
+# Content drafts (publish on Medium/LinkedIn, not in repo)
+medium_makale.md
+linkedin_post.md
